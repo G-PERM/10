@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+body {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  background-color: #dddddd;
+  font-size: 0;
+  font-family: Nunito;
+  max-width: 100vw;
+  overflow: hidden;
+}
+nav {
+  background-color: #222222;
+  color: aquamarine;
+  position: sticky;
+}
+#LogoContainer {
+  background-color: transparent;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+@media (orientation: portrait) {
+  body {
+    font-size: 1vh;
+  }
+  nav {
+    width: 100vh;
+    height: 5vh;
+    padding: 0.5vh;
+  }
+  #Logo {
+    width: auto;
+    height: 5vh;
+  }
+  #LogoContainer {
+    width: auto;
+    height: 5vh;
+    margin: 0;
+    margin-right: 0.5vh;
+  }
+}
+@media (orientation: landscape) {
+  body {
+    font-size: 1vw;
+    margin: 0;
+    border: 0;
+    padding: 0;
+  }
+  nav {
+    width: 100vw;
+    height: 5vw;
+    padding: 0.5vw;
+  }
+  #Logo {
+    width: auto;
+    height: 5vw;
+  }
+  #LogoContainer {
+    width: auto;
+    height: 5vw;
+    margin: 0;
+    margin-right: 0.5vw;
+  }
+}
