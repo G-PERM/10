@@ -10,9 +10,79 @@
   </head>
   <body>
     <nav>
-      <button id="LogoContainer" onclick="LogoLink()">
+      <a href="#0" id="LogoContainer" class="l">
         <img src="favicon.gif" alt="(Logo)" title="(Logo)" id="Logo" />
-      </button>
+      </a>
+      <div class="l">(Name)</div>
+      <div class="onlylandscape">
+        <div class="l"><a href="#0" title="Link">Home</a></div>
+        <div class="l"><a href="#1" title="Link">Link</a></div>
+        <div class="l dropdown">
+          <div class="dropdown-button">
+            Dropdown<span class="dropdownnohover">◂</span
+            ><span class="dropdownhover">▾</span>
+          </div>
+          <div class="dropdown-content">
+            <div>
+              <a href="#2" title="Link" class="dropdown-content-a">Link</a>
+            </div>
+            <div>
+              <a href="#3" title="Link" class="dropdown-content-a">Link</a>
+            </div>
+            <div>
+              <a href="#4" title="Link" class="dropdown-content-a">Link</a>
+            </div>
+          </div>
+        </div>
+        <div class="navr">
+          <div class="r nm"><a href="#6" title="Link">Link</a></div>
+          <div class="r"><a href="#5" title="Link">Link</a></div>
+        </div>
+      </div>
+      <div class="onlyportrait">
+        <div class="r nm" onclick="sidebar()">
+          <img
+            src="menu-button.gif"
+            alt="Menu Button"
+            title="Menu Button"
+            class="sidebar-button"
+          />
+        </div>
+        <div class="sidebar">
+          <div onclick="nosidebar()">
+            <img
+              src="cross.gif"
+              alt="Close Sidebar Button"
+              title="Close Sidebar Button"
+              class="sidebar-button"
+            />
+          </div>
+          <div class="sidebarhoverable"><a href="#0" title="Link">Home</a></div>
+          <div class="sidebarhoverable"><a href="#1" title="Link">Link</a></div>
+          <div class="dropdown">
+            <div class="dropdown-button sidebarhoverable">
+              Dropdown<span class="dropdownnohover">◂</span
+              ><span class="dropdownhover">▾</span>
+            </div>
+            <div class="dropdown-content">
+              <div class="sidebarhoverable">
+                <a href="#2" title="Link" class="dropdown-content-a">Link</a>
+              </div>
+              <div class="sidebarhoverable">
+                <a href="#3" title="Link" class="dropdown-content-a">Link</a>
+              </div>
+              <div class="sidebarhoverable">
+                <a href="#4" title="Link" class="dropdown-content-a">Link</a>
+              </div>
+            </div>
+          </div>
+          <div class="sidebarhoverable"><a href="#5" title="Link">Link</a></div>
+          <div class="sidebarhoverable"><a href="#6" title="Link">Link</a></div>
+        </div>
+      </div>
     </nav>
+    <div class="Main">
+      <img src="hero.jpg" alt="Hero" title="Hero" class="hero" />
+    </div>
   </body>
 </html>

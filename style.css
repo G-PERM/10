@@ -1,4 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+*::selection {
+  content: "";
+  color: #000000;
+  background-color: #ffffff;
+  text-decoration: underline;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
 body {
   margin: 0;
   border: 0;
@@ -7,59 +16,189 @@ body {
   font-size: 0;
   font-family: Nunito;
   max-width: 100vw;
-  overflow: hidden;
+  height: fit-content;
+}
+button:hover {
+  cursor: pointer;
+}
+.l {
+  float: left;
+}
+.r {
+  float: right;
+}
+.nm {
+  margin: 0;
 }
 nav {
   background-color: #222222;
   color: aquamarine;
-  position: sticky;
+  display: flex;
+  position: fixed;
+  top: 0;
+  align-items: center;
+  flex-direction: row;
+  width: 100vw;
+  z-index: 1002;
+}
+#Logo {
+  width: auto;
 }
 #LogoContainer {
   background-color: transparent;
   margin: 0;
   border: 0;
   padding: 0;
+  width: auto;
+}
+nav a {
+  color: aquamarine;
+  text-decoration: none;
+}
+.onlylandscape,
+.onlyportrait {
+  display: none;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown:hover .dropdownnohover,
+.dropdownhover {
+  display: none;
+}
+.dropdown:hover .dropdownhover {
+  display: inline-block;
+}
+.hero {
+  margin: 0;
+  filter: brightness(50%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  bottom: 0;
+  z-index: -10;
+}
+.Main {
+  color: burlywood;
+  font-size: 2vw;
 }
 @media (orientation: portrait) {
   body {
-    font-size: 1vh;
+    font-size: 1.618vh;
   }
   nav {
-    width: 100vh;
     height: 5vh;
-    padding: 0.5vh;
+  }
+  nav div {
+    margin: 0 1vh 0 0;
   }
   #Logo {
-    width: auto;
     height: 5vh;
   }
   #LogoContainer {
-    width: auto;
     height: 5vh;
+    margin: 0 0.5vh 0 0;
+  }
+  .sidebar-button {
+    width: 5vh;
+    height: auto;
+    z-index: 1001;
+  }
+  .sidebar {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    text-align: center;
+    width: 25vw;
+    height: 100vh;
     margin: 0;
-    margin-right: 0.5vh;
+    padding: 0;
+    top: 0;
+    right: 0;
+    background-color: #808080;
+    z-index: 1001;
+  }
+  .sidebar div {
+    padding: 1vh 0 1vh 0;
+    background-color: transparent;
+  }
+  .sidebarhoverable:hover {
+    background-color: #505050;
+  }
+  .dropdown-content {
+    display: none;
+  }
+  .sidebar div,
+  .dropdown-button,
+  .dropdown-content {
+    margin: 0;
+  }
+  .onlyportrait {
+    margin: 0;
+    width: 92.5vw;
+    display: block;
+  }
+  .Main {
+    margin-top: 5vh;
   }
 }
 @media (orientation: landscape) {
   body {
-    font-size: 1vw;
-    margin: 0;
-    border: 0;
-    padding: 0;
+    font-size: 1.618vw;
   }
   nav {
-    width: 100vw;
     height: 5vw;
-    padding: 0.5vw;
+  }
+  nav div {
+    margin: 0 1vw 0 0;
   }
   #Logo {
-    width: auto;
     height: 5vw;
   }
   #LogoContainer {
-    width: auto;
     height: 5vw;
+    margin: 0 0.5vw 0 0;
+  }
+  .dropdown {
+    display: grid;
+    align-items: center;
+    text-align: center;
+  }
+  .dropdown-button,
+  .dropdown-content,
+  .dropdown-content div {
     margin: 0;
-    margin-right: 0.5vw;
+  }
+  .dropdown-content {
+    position: absolute;
+    display: none;
+    margin-top: 9vw;
+  }
+  .dropdown,
+  .dropdown-button,
+  .dropdown-content {
+    width: 10vw;
+    height: fit-content;
+    background-color: #222222;
+  }
+  .dropdown-content a {
+    height: fit-content;
+    margin: 1vw 0 1vw 0;
+  }
+  .navr {
+    position: absolute;
+    right: 0;
+    margin: 0;
+    margin-left: auto;
+  }
+  .onlylandscape {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 0;
+  }
+  .Main {
+    margin-top: 5vw;
   }
 }
