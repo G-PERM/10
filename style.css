@@ -89,6 +89,8 @@ nav a {
   }
   nav {
     height: 5vh;
+    width: 99vw;
+    padding: 0.5vw;
   }
   nav div {
     margin: 0 1vh 0 0;
@@ -149,6 +151,8 @@ nav a {
   }
   nav {
     height: 5vw;
+    width: 99vw;
+    padding: 0.5vw;
   }
   nav div {
     margin: 0 1vw 0 0;
