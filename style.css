@@ -17,6 +17,7 @@ body {
   font-family: Nunito;
   max-width: 100vw;
   height: fit-content;
+  overflow: scroll;
 }
 button:hover {
   cursor: pointer;
@@ -27,12 +28,9 @@ button:hover {
 .r {
   float: right;
 }
-.nm {
-  margin: 0;
-}
 nav {
-  background-color: #222222;
-  color: aquamarine;
+  background-color: #dddddd;
+  color: #222222;
   display: flex;
   position: fixed;
   top: 0;
@@ -52,7 +50,7 @@ nav {
   width: auto;
 }
 nav a {
-  color: aquamarine;
+  color: #222222;
   text-decoration: none;
 }
 .onlylandscape,
@@ -70,14 +68,21 @@ nav a {
   display: inline-block;
 }
 .hero {
-  margin: 0;
   filter: brightness(50%);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: fixed;
-  bottom: 0;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  margin: 0;
+  top: 0;
   z-index: -10;
+  margin-top: 6vw;
+}
+.hero-text {
+  color: rgb(0, 255, 255);
+  text-align: center;
+  width: 100vw;
+  display: grid;
+  align-items: center;
 }
 .Main {
   color: burlywood;
@@ -88,22 +93,23 @@ nav a {
     font-size: 1.618vh;
   }
   nav {
-    height: 5vh;
-    width: 99vw;
+    height: 5vw;
+    width: 99.5vw;
     padding: 0.5vw;
+    padding-right: 0;
   }
   nav div {
-    margin: 0 1vh 0 0;
+    margin: 0 1vw 0 0;
   }
   #Logo {
-    height: 5vh;
+    height: 5vw;
   }
   #LogoContainer {
-    height: 5vh;
-    margin: 0 0.5vh 0 0;
+    height: 5vw;
+    margin: 0 1vw 0 0;
   }
   .sidebar-button {
-    width: 5vh;
+    width: 5vw;
     height: auto;
     z-index: 1001;
   }
@@ -121,8 +127,21 @@ nav a {
     background-color: #808080;
     z-index: 1001;
   }
+  .sideblur {
+    display: none;
+    width: 75vw;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    backdrop-filter: brightness(50%);
+    overflow: hidden;
+  }
   .sidebar div {
-    padding: 1vh 0 1vh 0;
+    padding: 1vw 0 1vw 0;
     background-color: transparent;
   }
   .sidebarhoverable:hover {
@@ -138,11 +157,31 @@ nav a {
   }
   .onlyportrait {
     margin: 0;
-    width: 92.5vw;
+    width: 5vw;
     display: block;
+    padding: 0 10vw 0 10vw;
+    margin: 0 0 0 auto;
+  }
+  .nm {
+    display: grid;
+    align-items: center;
+    width: 5vw;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .nm2 {
+    display: grid;
+    align-items: center;
+    width: 5vw;
+    padding: 0 !important;
+    margin: 0.5vw 10vw 0.5vw 10vw !important;
   }
   .Main {
-    margin-top: 5vh;
+    margin-top: 6vw;
+  }
+  .hero-text {
+    margin: 40vw 0 0 0;
+    font-size: 10vh;
   }
 }
 @media (orientation: landscape) {
@@ -184,7 +223,7 @@ nav a {
   .dropdown-content {
     width: 10vw;
     height: fit-content;
-    background-color: #222222;
+    background-color: #dddddd;
   }
   .dropdown-content a {
     height: fit-content;
@@ -203,6 +242,10 @@ nav a {
     margin: 0;
   }
   .Main {
-    margin-top: 5vw;
+    margin-top: 6vw;
+  }
+  .hero-text {
+    margin: 60vh 0 0 0;
+    font-size: 7.5vw;
   }
 }
