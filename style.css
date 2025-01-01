@@ -37,10 +37,16 @@ nav {
   align-items: center;
   flex-direction: row;
   width: 100vw;
+  height: 5vw;
+  padding: 0.5vw;
   z-index: 1002;
+}
+nav div {
+  margin: 0 1vw 0 0;
 }
 #Logo {
   width: auto;
+  height: 5vw;
 }
 #LogoContainer {
   background-color: transparent;
@@ -53,9 +59,21 @@ nav a {
   color: #222222;
   text-decoration: none;
 }
+.nav-name {
+  text-align: center;
+}
 .onlylandscape,
 .onlyportrait {
   display: none;
+}
+.dropdown-content {
+  display: none;
+}
+.sidebar div,
+.dropdown-button,
+.dropdown-content,
+.dropdown-content div {
+  margin: 0;
 }
 .dropdown:hover .dropdown-content {
   display: block;
@@ -67,9 +85,15 @@ nav a {
 .dropdown:hover .dropdownhover {
   display: inline-block;
 }
+.Main {
+  color: indianred;
+  margin: 0 auto 0 auto;
+  text-align: center;
+  width: 75vw;
+}
 .hero {
   width: 100vw;
-  height: 100vw;
+  height: auto;
   margin: 0;
   margin-top: 6vw;
   padding: 0;
@@ -79,16 +103,9 @@ nav a {
   left: 0;
   z-index: -1;
 }
-.Main {
-  color: indianred;
-  margin: 0 auto 0 auto;
-  text-align: center;
-  width: 75vw;
-}
 .hero-text {
   color: rgb(0, 255, 255);
   width: 100vw;
-  height: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -99,29 +116,74 @@ nav a {
   display: block;
   color: burlywood;
   font-size: 5vw;
-  max-width: 65vw;
+  max-width: 66.66vw;
   text-align: center;
   height: auto;
+}
+.quote-container {
+  width: 75vw;
+  height: fit-content;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+.quote {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  padding: 2.5vw;
+  margin: 2.5vw;
+  background-color: darkslategray;
+}
+.person {
+  height: auto;
+}
+.quote-position {
+  color: blueviolet;
+}
+.quote-text {
+  display: block;
+  color: coral;
+}
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.quote::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: conic-gradient(from var(--angle), transparent 75%, red);
+  animation: border-animation 2.5s linear infinite;
+  z-index: -1;
+}
+@keyframes border-animation {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
 }
 @media (orientation: portrait) {
   body {
     font-size: 1.618vh;
   }
   nav {
-    height: 5vw;
     width: 99.5vw;
-    padding: 0.5vw;
     padding-right: 0;
-  }
-  nav div {
-    margin: 0 1vw 0 0;
-  }
-  #Logo {
-    height: 5vw;
   }
   #LogoContainer {
     height: 5vw;
     margin: 0 1vw 0 0;
+  }
+  .nav-name {
+    font-size: 2.37684vw;
   }
   .sidebar-button {
     width: 5vw;
@@ -162,14 +224,6 @@ nav a {
   .sidebarhoverable:hover {
     background-color: #505050;
   }
-  .dropdown-content {
-    display: none;
-  }
-  .sidebar div,
-  .dropdown-button,
-  .dropdown-content {
-    margin: 0;
-  }
   .onlyportrait {
     margin: 0;
     width: 5vw;
@@ -197,39 +251,43 @@ nav a {
   .hero-text {
     font-size: 15vh;
   }
+  .quote-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .quote {
+    width: 50vw;
+    border-radius: 5vw;
+  }
+  .person {
+    width: 50vw;
+  }
+  .quote::after {
+    padding: 1vw;
+    border-radius: 5vw;
+  }
 }
 @media (orientation: landscape) {
   body {
     font-size: 1.618vw;
   }
   nav {
-    height: 5vw;
     width: 99vw;
-    padding: 0.5vw;
-  }
-  nav div {
-    margin: 0 1vw 0 0;
-  }
-  #Logo {
-    height: 5vw;
   }
   #LogoContainer {
     height: 5vw;
     margin: 0 0.5vw 0 0;
+  }
+  .nav-name {
+    font-size: 1.5vw;
   }
   .dropdown {
     display: grid;
     align-items: center;
     text-align: center;
   }
-  .dropdown-button,
-  .dropdown-content,
-  .dropdown-content div {
-    margin: 0;
-  }
   .dropdown-content {
     position: absolute;
-    display: none;
     margin-top: 9vw;
   }
   .dropdown,
@@ -260,5 +318,26 @@ nav a {
   }
   .hero-text {
     font-size: 25vw;
+  }
+  .quote-container {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .quote {
+    border-radius: 2.5vw;
+    width: 15vw;
+  }
+  .person {
+    width: 15vw;
+  }
+  .quote-position {
+    font-size: 1.5vw;
+  }
+  .quote-text {
+    font-size: 1vw;
+  }
+  .quote::after {
+    padding: 0.5vw;
+    border-radius: 2.5vw;
   }
 }
