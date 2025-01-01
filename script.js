@@ -18,11 +18,3 @@ function nosidebar() {
   let body = document.querySelector("body");
   body.style.overflow = "scroll";
 }
-window.addEventListener("load", adjustHeroTextHeight);
-window.addEventListener("resize", adjustHeroTextHeight);
-function adjustHeroTextHeight() {
-  const Hero = document.getElementsByClassName("hero")[0];
-  const HeroText = document.getElementsByClassName("hero-text")[0];
-  const HeroHeight = Hero.offsetHeight;
-  HeroText.style.height = HeroHeight + "px";
-}
