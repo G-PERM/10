@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap");
 *::selection {
   content: "";
   color: #000000;
@@ -14,7 +14,7 @@ body {
   padding: 0;
   background-color: #bbbbbb;
   font-size: 0;
-  font-family: Nunito;
+  font-family: Smooth Sans;
   max-width: 100vw;
   height: fit-content;
   overflow: scroll;
@@ -36,11 +36,16 @@ nav {
   top: 0;
   align-items: center;
   flex-direction: row;
-  width: 100vw;
+  height: 5vw;
+  padding: 0.5vw;
   z-index: 1002;
+}
+nav div {
+  margin: 0 1vw 0 0;
 }
 #Logo {
   width: auto;
+  height: 5vw;
 }
 #LogoContainer {
   background-color: transparent;
@@ -53,9 +58,21 @@ nav a {
   color: #222222;
   text-decoration: none;
 }
+.nav-name {
+  text-align: center;
+}
 .onlylandscape,
 .onlyportrait {
   display: none;
+}
+.dropdown-content {
+  display: none;
+}
+.sidebar div,
+.dropdown-button,
+.dropdown-content,
+.dropdown-content div {
+  margin: 0;
 }
 .dropdown:hover .dropdown-content {
   display: block;
@@ -69,59 +86,143 @@ nav a {
 }
 .hero {
   width: 100vw;
-  height: 100vw;
+  height: auto;
   margin: 0;
   margin-top: 6vw;
   padding: 0;
+  margin: 0;
   filter: brightness(50%);
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
 }
-.Main {
-  color: indianred;
-  margin: 0 auto 0 auto;
-  text-align: center;
-  width: 75vw;
-}
 .hero-text {
   color: rgb(0, 255, 255);
   width: 100vw;
-  height: 100vw;
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 6vw 0 0 0;
+  margin: 0;
 }
 .hero-subtext {
   display: block;
   color: burlywood;
-  font-size: 5vw;
-  max-width: 65vw;
+  font-size: 3vw;
+  max-width: 66.66vw;
   text-align: center;
   height: auto;
+}
+.hero,
+.hero-text {
+  margin: 6vw 0 0 0;
+  animation: mta 1s linear;
+}
+@keyframes mta {
+  from {
+    margin: 0 0 0 0;
+  }
+  to {
+    margin: 6vw 0 0 0;
+  }
+}
+.Main {
+  color: indianred;
+  margin: 6vw auto 0 auto;
+  text-align: center;
+  width: 85vw;
+  margin: 0 auto 0 auto;
+}
+.quote-mastercontainer {
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+.quote-mastercontainer button {
+  height: fit-content;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: beige;
+  color: darkslategrey;
+}
+.quote-container {
+  width: 75vw;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  padding: 0;
+  margin: 0;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overflow-y: hidden;
+}
+.quote {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-items: start;
+  height: fit-content;
+  scroll-snap-align: center;
+  padding: 2.5vw;
+  margin: 2.5vw;
+  background-color: darkslategray;
+}
+.person {
+  height: auto;
+}
+.quote-position {
+  color: blueviolet;
+}
+.quote-text {
+  display: block;
+  color: coral;
+}
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.quote::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: conic-gradient(from var(--angle), transparent 75%, red);
+  animation: border-animation 2.5s linear infinite;
+  z-index: -1;
+}
+@keyframes border-animation {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
 }
 @media (orientation: portrait) {
   body {
     font-size: 1.618vh;
   }
   nav {
-    height: 5vw;
     width: 99.5vw;
-    padding: 0.5vw;
     padding-right: 0;
-  }
-  nav div {
-    margin: 0 1vw 0 0;
-  }
-  #Logo {
-    height: 5vw;
   }
   #LogoContainer {
     height: 5vw;
     margin: 0 1vw 0 0;
+  }
+  .nav-name {
+    font-size: 2.37684vw;
   }
   .sidebar-button {
     width: 5vw;
@@ -129,7 +230,7 @@ nav a {
     z-index: 1001;
   }
   .sidebar {
-    display: none;
+    display: flex;
     flex-direction: column;
     position: absolute;
     text-align: center;
@@ -138,13 +239,15 @@ nav a {
     margin: 0;
     padding: 0;
     top: 0;
-    right: 0;
-    background-color: #808080;
+    right: -25%;
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(2.5vw);
+    transition: all 0.5s linear;
     z-index: 1001;
   }
   .sideblur {
     display: none;
-    width: 75vw;
+    width: 100vw;
     height: 100vh;
     position: absolute;
     left: 0;
@@ -152,8 +255,13 @@ nav a {
     margin: 0;
     padding: 0;
     background-color: transparent;
-    backdrop-filter: brightness(50%);
+    backdrop-filter: brightness(1);
+    border: none;
+    transition: all 0.5s linear;
     overflow: hidden;
+  }
+  .sideblur:hover {
+    cursor: default;
   }
   .sidebar div {
     padding: 1vw 0 1vw 0;
@@ -161,14 +269,6 @@ nav a {
   }
   .sidebarhoverable:hover {
     background-color: #505050;
-  }
-  .dropdown-content {
-    display: none;
-  }
-  .sidebar div,
-  .dropdown-button,
-  .dropdown-content {
-    margin: 0;
   }
   .onlyportrait {
     margin: 0;
@@ -195,7 +295,29 @@ nav a {
     font-size: 2vh;
   }
   .hero-text {
-    font-size: 15vh;
+    font-size: 15vw;
+  }
+  .quote-mastercontainer {
+    width: 87vw;
+  }
+  .quote-mastercontainer button {
+    width: 5vw;
+    padding: 1.25vw;
+    margin: 1.25vw;
+    font-size: 5vw;
+    border-radius: 2vw;
+  }
+  .quote {
+    width: 65vw;
+    border-radius: 5vw;
+  }
+  .person {
+    width: 65vw;
+    border-radius: 5vw;
+  }
+  .quote::after {
+    padding: 1vw;
+    border-radius: 5vw;
   }
 }
 @media (orientation: landscape) {
@@ -203,33 +325,22 @@ nav a {
     font-size: 1.618vw;
   }
   nav {
-    height: 5vw;
     width: 99vw;
-    padding: 0.5vw;
-  }
-  nav div {
-    margin: 0 1vw 0 0;
-  }
-  #Logo {
-    height: 5vw;
   }
   #LogoContainer {
     height: 5vw;
     margin: 0 0.5vw 0 0;
+  }
+  .nav-name {
+    font-size: 1.5vw;
   }
   .dropdown {
     display: grid;
     align-items: center;
     text-align: center;
   }
-  .dropdown-button,
-  .dropdown-content,
-  .dropdown-content div {
-    margin: 0;
-  }
   .dropdown-content {
     position: absolute;
-    display: none;
     margin-top: 9vw;
   }
   .dropdown,
@@ -259,6 +370,34 @@ nav a {
     font-size: 3vw;
   }
   .hero-text {
-    font-size: 25vw;
+    font-size: 15vw;
+  }
+  .quote-mastercontainer {
+    width: 85vw;
+  }
+  .quote-mastercontainer button {
+    width: 3vw;
+    padding: 1vw;
+    margin: 1vw;
+    font-size: 2vw;
+    border-radius: 1vw;
+  }
+  .quote {
+    width: 15vw;
+    border-radius: 2.5vw;
+  }
+  .person {
+    width: 15vw;
+    border-radius: 2.5vw;
+  }
+  .quote-position {
+    font-size: 1.5vw;
+  }
+  .quote-text {
+    font-size: 1vw;
+  }
+  .quote::after {
+    padding: 0.5vw;
+    border-radius: 2.5vw;
   }
 }
