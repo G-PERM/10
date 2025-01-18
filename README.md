@@ -2,7 +2,7 @@
 
 ### Hello, I am **_Anwesh Arpan Behera_**
 
-![image](https://github.com/About-Computers/About-Computers.github.io/blob/main/a.jpg)
+![image](https://github.com/About-Computer/About-Computer.github.io/blob/main/a.jpg)
 
 ### & I have made this website layout as a project because I needed a universal layout which I could use in all my websites.
 
