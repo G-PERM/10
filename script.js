@@ -2,10 +2,10 @@ function sidebar() {
   let sidebar = document.getElementsByClassName("sidebar")[0];
   sidebar.style.right = "0";
   let sideblur = document.getElementsByClassName("sideblur")[0];
-  sideblur.style.display = "block";
-  sideblur.style.backdropFilter = "brightness(0.5)";
+  sideblur.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+  sideblur.style.visibility = "visible";
   let sidebarButton = document.getElementsByClassName("sidebar-on-button")[0];
-  sidebarButton.style.display = "none";
+  sidebarButton.style.visibility = "hidden";
   let body = document.querySelector("body");
   body.style.overflow = "hidden";
 }
@@ -13,10 +13,12 @@ function nosidebar() {
   let sidebar = document.getElementsByClassName("sidebar")[0];
   sidebar.style.right = "-25%";
   let sideblur = document.getElementsByClassName("sideblur")[0];
-  sideblur.style.display = "none";
-  sideblur.style.backdropFilter = "brightness(1)";
+  sideblur.style.backgroundColor = "rgba(0, 0, 0, 0)";
+  setTimeout(function () {
+    sideblur.style.visibility = "hidden";
+  }, 500);
   let sidebarButton = document.getElementsByClassName("sidebar-on-button")[0];
-  sidebarButton.style.display = "grid";
+  sidebarButton.style.visibility = "visible";
   let body = document.querySelector("body");
   body.style.overflow = "scroll";
 }
