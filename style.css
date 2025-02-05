@@ -342,9 +342,15 @@ nav a {
     align-items: center;
     text-align: center;
   }
+  .dropdown-button {
+    z-index: 1;
+  }
   .dropdown-content {
+    top: 0;
     position: absolute;
-    margin-top: 9vw;
+  }
+  .s1 {
+    height: 4vw;
   }
   .dropdown,
   .dropdown-button,
