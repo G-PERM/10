@@ -1,0 +1,5 @@
+.vscode
+node_modules
+.prettierrc
+prettierrc.json
+.py
