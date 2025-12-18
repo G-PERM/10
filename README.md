@@ -1,40 +1,42 @@
-# Required Setup After Cloning
+## One-Time Path Adjustment (MANDATORY)
 
-This layout uses absolute paths such as `/favicon.gif`, `/css/style.css`, etc.
+This project uses the `/10/` URL prefix by default.
 
-When hosted on GitHub Pages as a **project site**, the repository is served under
-a folder path (for example `/10/`). Because of this, the site will not work
-correctly immediately after cloning.
+After cloning the repository, you **MUST** perform the following steps.
 
 ---
 
-## REQUIRED: Run This Command Once After Cloning
+### Step 1 — Run the script (ONE TIME ONLY)
 
-Open a terminal **inside the cloned repository folder** and run the following
-command exactly as shown:
+From the project root, run:
 
 ```bash
-python - <<'EOF'
-import os, re
-
-project = os.path.basename(os.getcwd())
-prefix = f"/{project}/"
-
-for root, _, files in os.walk("."):
-    for name in files:
-        if name.endswith((".html", ".css", ".js")):
-            path = os.path.join(root, name)
-            with open(path, "r", encoding="utf-8", errors="ignore") as f:
-                data = f.read()
-
-            new = re.sub(r'<base[^>]*>', '', data, flags=re.I)
-            new = re.sub(r'(["\'])/(?!' + re.escape(project) + r'/)', r'\1' + prefix, new)
-
-            if new != data:
-                with open(path, "w", encoding="utf-8") as f:
-                    f.write(new)
-                print("Fixed:", path)
-
-print("Done. Paths updated for GitHub Pages project hosting.")
-EOF
+python .py
 ```
+
+This command updates all `.html` and `.css` files in place.
+
+---
+
+### Step 2 — DELETE THE SCRIPT (REQUIRED)
+
+After the script finishes running:
+
+- **DELETE `.py`**
+- **DELETE THE SCRIPT IMMEDIATELY AFTER RUNNING IT**
+- **DO NOT keep the file**
+- **DO NOT commit the file**
+- **DO NOT run it again**
+
+---
+
+### THIS SCRIPT MUST NOT EXIST AFTER RUNNING
+
+`.py` is a **one-time utility**.
+
+After it has been executed:
+
+- **DELETE `.py`**
+- The file **must not exist** in the project anymore
+
+If the script still exists after running it, the setup is **NOT complete**.
