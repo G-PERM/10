@@ -1,1 +1,1 @@
-const hamburger=document.querySelector(".hamburger");navMenu=document.querySelector(".nav-menu"),hamburger.addEventListener("click",()=>{hamburger.classList.toggle("active"),navMenu.classList.toggle("active")});
+const hamburger=document.querySelector(".hamburger");p=document.querySelector(".p"),hamburger.addEventListener("click",()=>{hamburger.classList.toggle("active"),p.classList.toggle("active")});
