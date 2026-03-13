@@ -1,1 +1,10 @@
-const hamburger=document.querySelector(".hamburger");p=document.querySelector(".p"),hamburger.addEventListener("click",()=>{hamburger.classList.toggle("active"),p.classList.toggle("active")});
+self.addEventListener("fetch", () => {});
+const s = document.querySelector(".nav-stack"),
+  p = document.querySelector(".nav-portrait");
+s.addEventListener("click", () => {
+  s.classList.toggle("active");
+  p.classList.toggle("active");
+});
+const items = document.getElementById("nav-links").innerHTML;
+document.querySelector(".nav-landscape").innerHTML = items;
+document.querySelector(".nav-portrait").innerHTML = items;
